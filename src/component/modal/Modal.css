@@ -1,0 +1,55 @@
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .modal_content {
+    background-color: #fff;
+    border-radius: 5px;
+    max-height: 80vh;
+    min-height: fit-content;
+   width: 50vw;
+   
+   scrollbar-width: none;
+   position: relative;
+  }
+
+  .modal_content_div{
+  max-height: 70vh;
+  min-height: fit-content;
+  overflow: scroll;
+  }
+  .modal_content_div::-webkit-scrollbar{
+    display: none;
+  }
+
+  .modal_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    padding: 10px;
+    background-color:rgba(255, 255, 255, 1);
+    padding-bottom: 8px;
+    border-bottom: 1px solid gray;
+  }
+
+  .modal_title{
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .close{
+    font-size: 2rem;
+  }
+  
+

@@ -1,38 +1,203 @@
-.App {
-  text-align: center;
+button{
+  cursor: pointer;
+  outline: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  max-width: fit-content;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+  font-size: 1.8rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.heading{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  padding:0 4rem;
+  font-style: normal;
+}
+
+.text_right{
+  text-align: right;
+  margin-right: 0.8rem;
+}
+
+.text_right>span{
+  color: rgba(0, 110, 255, 1);
+  padding-bottom: 0.05rem;
+  font-size: 0.8rem;
+  border-bottom: 1.5px solid rgba(0, 110, 255, 1);
+  cursor: pointer;
+}
+
+.fa-angle-up,.fa-angle-down{
+  font-size: 0.7rem;
+}
+
+.show_product_title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: #FFFFFF;
+  color: var(--primary-color);
+  max-width: 21vw;
+  min-width: 320px;
+ 
+border: 1px solid rgba(0, 0, 0, 0.07);
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product_name{
+ height: 20px;
+  width: 300px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.product_name::-webkit-scrollbar{
+  display: none;
+}
+
+
+
+.show_product_title>button{
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color:var(--bg-primary);
+}
+
+.parent_product_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+
+}
+.add_discount_button{
+  background-color: var(--bg-primary);
+  color: #FFFFFF;
+  padding: 0.72rem 1rem;
+  font-size: 1rem;
+   text-transform: capitalize;
+  border: none;
+  border-radius: 4px;
+  margin-left: 0.8rem;
+  box-shadow:2px 2px 7px 0px #8adeca85;
+}
+
+.group_dot{
+  display: flex;
+  align-items: center;
+  cursor: move;
+}
+
+.group_dot>span{
+  font-size: 1.2rem;
+  margin: 0 .8rem;
+  padding: 0;
+}
+
+
+.input_field{ 
+  padding: 0.6rem;
+  font-size: 1rem;
+  background: #FFFFFF;
+  color: var(--primary-color);
+  width: 3vw;
+  min-width: 40px;
+  outline: none;
+  margin: 0 0.8rem;
+  overflow: scroll;
+  scrollbar-width: none;
+border: 1px solid rgba(0, 0, 0, 0.07);
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.select{
+ padding: 0.55rem;
+ font-size: 1rem;
+ outline: none;
+ border: 1px solid rgba(0, 0, 0, 0.07);
+ color: var(--primary-color);
+ background-color: #FFFFFF;
+ box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close_icon{
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin:-0.4rem 0 0 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.show_variants_div{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0.8rem;
 }
 
-.App-link {
-  color: #61dafb;
+.show_variant_title{
+  padding: 0.35rem;
+  background: #FFFFFF;
+  color: var(--primary-color);
+  max-width: 12vw;
+  min-width: 200px;
+  border-radius: 20px;
+  overflow: scroll;
+  scrollbar-width: none;
+ 
+border: 1px solid rgba(0, 0, 0, 0.07);
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.show_variant_title::-webkit-scrollbar{
+  display: none;
+}
+
+.show_variants_div>select{
+  padding: 0.4rem;
+  border-radius: 20px;
+}
+
+.show_variants_div>.input_field{
+  padding: 0.4rem;
+  border-radius: 20px;
+}
+
+.show_variants_div>.close_icon{
+  margin-top: -0.2rem;
+  font-size: 1rem;
+}
+
+.show_variants_div>.group_dot>span{
+  font-size: 1rem;
+}
+
+.show_variants_div>.group_dot>img{
+  height:1rem;
+  margin-top: 0.2rem;
+}
+
+.add_button{
+  text-align: right;
+}
+
+.add_button>button{
+  padding:10px 20px;
+   font-size: 1rem;
+   background-color: #FFFFFF;
+   border: 2px solid var(--bg-primary);
+   margin: 1rem 2rem 1rem 1rem;
+   font-weight: 600;
+   color: var(--bg-primary);
+
 }
