@@ -1,9 +1,10 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { FieldArray, Formik,Form } from 'formik'
 import React, { useEffect, useRef, useState } from 'react'
 import Modal from '../component/modal/Modal'
-import SearchInput from '../component/search'
 import ProductForm from '../component/selectInput'
-import useAxios, { cancelApi } from '../hooks/useAxios'
+import useAxios from '../hooks/useAxios'
 import {useSelector} from "react-redux"
 import axios from 'axios'
 
@@ -24,7 +25,7 @@ const AddProduct = () => {
 useEffect(()=>{
   formRef.current.setFieldValue('checked',initial_value?.checked)
 },[initial_value])
-  console.log("selected product",initial_value)
+ 
 
 
   
@@ -67,7 +68,7 @@ useEffect(()=>{
       const _variants=[...formRef.current.values.checked[index].variants]
       const removed=_variants.splice(dragVaritantItem.current,1)[0]
       _variants.splice(dragOverVariantItem.current,0,removed)
-      console.log("check teh ",_variants,removed)
+   
       formRef.current.setFieldValue(`checked.${index}.variants`,_variants)
       dragVaritantItem.current=null;
       dragOverVariantItem.current=null;
@@ -95,13 +96,13 @@ useEffect(()=>{
 
     // ---------------------------------hide the variants product based on index when user click on hide variants-----------------------
     const handleHideVariants=(index)=>{
-      console.log("length and index",variantsIndex.length,index)
+      
       variantsIndex.splice(variantsIndex.indexOf(index),1)
       setVariantsIndex([...variantsIndex])
     }
 
     const handleSearch=(e)=>{
-      console.log("search",e.target.value)
+   
       setSearchValue(e.target.value)
      
     }

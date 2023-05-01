@@ -1,19 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Search.css';
 
 const SearchInput = ({handleChange}) => {
   // const [inputValue, setInputValue] = useState('');
 
-  const handleChangeS = (event) => {
-    console.log("event",event.target.value)
-    // setInputValue(event.target.value);
-  };
-
-  const handleSearch = (e) => {
-    // Perform search action here
-
-    // console.log('Search performed:', inputValue);
-  };
+ 
 
   return (
     <div className="search-container">

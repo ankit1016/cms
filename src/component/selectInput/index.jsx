@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useCallback, useRef, useState } from 'react';
 import { FieldArray, Form, Formik } from 'formik';
 import "./checkbox.css"
 import {useSelector,useDispatch} from 'react-redux'
@@ -72,7 +73,7 @@ const initialValues=useSelector(state=>state.Product.selectedProduct)
   const [variantCount,setVariantCount]=useState(0)
   const spinner=useSelector((state=>state.Theme.spinner))
   
-    console.log("check edit data",editData)
+   
     const observer = useRef()
     const lastElementRef = useCallback(node => {
         if(spinner)
@@ -96,7 +97,7 @@ const initialValues=useSelector(state=>state.Product.selectedProduct)
     }
     else{
     push(res);
-    console.log(formRef.current.values)
+    
     mapValues[index].variants.forEach((val)=>{
   document.getElementById(val.id).checked=true
      return {...val}
@@ -119,22 +120,21 @@ const initialValues=useSelector(state=>state.Product.selectedProduct)
     // push(val)
    setVariantCount((pre)=>pre+1)
    let preval=formRef.current.values.checked[editData.editIndex]?.variants?.length?formRef.current.values.checked[editData.editIndex].variants:[]
-    console.log("check teh pre val",preval)
-    console.log("compare the value",editData,res)
+  
     if(editData.id){
       if(editData.id!==res.id){preval=[];editData.id=res.id;}
     }
     formRef.current.setFieldValue(`checked.${editData.editIndex}.title`,res.title)
     formRef.current.setFieldValue(`checked.${editData.editIndex}.id`,res.id)
     formRef.current.setFieldValue(`checked.${editData.editIndex}.variants`,[...preval,val])
-    console.log("check the values",formRef.current.values.checked)
+   
     document.getElementById(res.id).checked=true
   }
   else{
      push(val)
      formRef.current.setFieldValue(`checked.${i}.title`,res.title)
      formRef.current.setFieldValue(`checked.${i}.id`,res.id)
-     console.log("check the values",formRef.current.values.checked)
+ 
      document.getElementById(res.id).checked=true
   }
   }
@@ -142,7 +142,7 @@ const initialValues=useSelector(state=>state.Product.selectedProduct)
 const handleVariantsUnSelect=(remove,index,i)=>{
  remove(index)
  setVariantCount(pre=>pre-1)
- console.log("cehck the console",variantCount)
+
   // document.getElementById(formRef.current.values?.checked[i]?.id).checked=false
   if(variantCount===1){
   const products = [...formRef.current.values.checked];
