@@ -87,8 +87,8 @@ const initialValues=useSelector(state=>state.Product.selectedProduct)
     }, [spinner])
 
   const handleSelectAll = (push,res,index,) => {
-  
-    if(Object.keys(editData).length){
+  console.log("check teh id",res,editData)
+    if(Object.keys(editData).length&&editData.id||editData.editIndex===0){
      formRef.current.setFieldValue(`checked.${editData.editIndex}`,res)
      mapValues[index].variants.forEach((val)=>{
       document.getElementById(val.id).checked=true
@@ -97,7 +97,6 @@ const initialValues=useSelector(state=>state.Product.selectedProduct)
     }
     else{
     push(res);
-    
     mapValues[index].variants.forEach((val)=>{
   document.getElementById(val.id).checked=true
      return {...val}
@@ -116,7 +115,7 @@ const initialValues=useSelector(state=>state.Product.selectedProduct)
   }
 
  const handleVariantsSelect=(push,val,res,i)=>{
-  if(Object.keys(editData).length){
+  if(Object.keys(editData).length&&editData.id){
     // push(val)
    setVariantCount((pre)=>pre+1)
    let preval=formRef.current.values.checked[editData.editIndex]?.variants?.length?formRef.current.values.checked[editData.editIndex].variants:[]
@@ -134,7 +133,6 @@ const initialValues=useSelector(state=>state.Product.selectedProduct)
      push(val)
      formRef.current.setFieldValue(`checked.${i}.title`,res.title)
      formRef.current.setFieldValue(`checked.${i}.id`,res.id)
- 
      document.getElementById(res.id).checked=true
   }
   }
